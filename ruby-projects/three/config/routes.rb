@@ -1,14 +1,5 @@
 Three::Application.routes.draw do
-  get "page/index"
-
-  get "page/new"
-
-  get "page/edit"
-
-  get "page/update"
-
-  get "page/destroy"
-
+  resources :quotes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

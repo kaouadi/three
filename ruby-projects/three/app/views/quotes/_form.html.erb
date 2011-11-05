@@ -1,0 +1,18 @@
+<%= form_for @quote do |quote_form| %>
+	<%= quote_form.label :name %>
+	<%= quote_form.text_field :name %> <br />
+	
+	<%= quote_form.fields_for :quote_lines do |quote_line_fields| %>
+		<%= quote_line_fields.label :quantity %>
+		<%= quote_line_fields.text_field :quantity %>
+		
+		<%= quote_line_fields.fields_for :item do |item_fields| %>
+			<%= item_fields.label :description %>
+			<%= item_fields.text_field :description %>
+		<% end %>
+		
+		<br />		
+	<% end %>
+	
+	<%= quote_form.submit%>
+<% end %>

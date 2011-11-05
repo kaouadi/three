@@ -1,0 +1,255 @@
+.container {
+	width: 950px;
+}
+body {
+	background: #cff;
+}
+
+header {
+	padding-top:20px;
+	padding-bottom: 10px
+	
+}
+section h1 {
+    font-size: 200%;
+}
+
+section {
+	background:scroll 0 0 transparent;
+	margin-top:1em;
+	font-size:120%;
+	margin-top: 0px; 
+	padding:15px;
+	 
+}
+section#actions,#infos{
+	font: 13px/1.5 Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
+}
+
+
+#content {
+    display: table;
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin-top:14px;
+	padding-left:10px;
+	
+}
+
+#mainContent {
+    /*display: table-cell;*/
+    padding-right: 22px;
+    width: 640px;
+}
+
+
+#menu{	
+	background: none repeat scroll 0 0 #FFFFFF;
+	 font: 13px Arial,sans-serif
+}
+
+
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 950px;
+}
+
+footer nav {
+    float: none;
+	background-color:white;
+}
+/* Field */
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+.round {
+	-moz-border-radius: 	10px;
+	-webkit-border-radius: 	10px;
+	border-radius:			10px;
+}
+/* Navigation */
+
+
+nav {
+	/*background-color:white;*/
+	padding:0 0.7em;
+	white-space:nowrap;
+}
+
+
+nav ul {
+	margin:0;
+	padding:0;	
+}
+
+nav ul li {
+	list-style-type:none;
+	display: inline-block;
+	padding: 0.2em 0;
+}
+
+nav ul li a {
+	padding: 0 5px;
+	
+}
+
+
+nav ul li a:visited {
+	color:#09c;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+/* sidebar */
+
+/* premiere version*/
+
+aside {
+	background: none repeat scroll 0 0 #FFFFCC;
+    display: table-cell;
+    width: 300px;
+}
+
+aside nav ul li {
+	list-style-type:none;
+	display: block;
+	padding: 0.2em 0;
+}
+
+header nav {
+	background-color:white;
+	float:right;	
+}
+.container header {
+	height:20px;
+}
+
+/*deuxieme version*/
+
+#sidebar {
+	background: none repeat scroll 0 0 #FFFFCC;
+    display: table-cell;
+    width: 300px;
+}
+
+#sidebar nav ul li {
+	list-style-type:none;
+	display: block;
+	padding: 0.2em 0;
+}
+
+/*Companies table */
+
+.index {
+	
+	width: 100%;
+}
+.h3 {
+    font-size: 16px
+}
+h6 {
+    font-size: 10px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.company_info {
+    margin-left: 0;
+}
+.link_to.email {
+    margin-right: 6px;
+    text-decoration: none;
+}
+.index td.party h6 {
+   	color: #888888;
+	font-size: 12px;
+	line-height: 1.3em;
+	margin-bottom: 3px;
+}
+
+table.index td.party h6 a {
+    color: #888888;
+}
+table.index div.avatar_subject div.info {
+    margin-left: 0;
+}
+
+table.index td {
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 11px;
+    height: 55px;
+    padding: 12px 0;
+    vertical-align: top;
+}
+/* Desactiver alernative row    */
+
+table.no-zebra tbody tr:nth-child(even) td,
+table.no-zebra tbody tr.even td {
+  background: transparent;
+}
+
+
+/* Company = > Requests */
+
+table.requests{
+	margin-top:1em;
+	
+}
+
+table.request tr{
+	/*height:70px;*/
+}
+
+table.request tr td.gravatar{
+	border-top:1px solid #ccc;
+	vertical-align:top;
+	width: 50px;
+}
+
+table.requests tr td.request{
+	border-top:1px solid #ccc;
+	vertical-align: top;
+	padding-top:10px;
+}
+table.request tr td.request span.timestamp{
+	display:block;
+	font-size:85%;
+	color:#666;
+}
+
+.first {
+	width:100px;
+}
+
+/* companies/show/ request/quotes/facture*/
+div.company section {
+	    display: table-cell;
+	    width: 200px;
+		text-align: left;
+		margin-top: 0;
+	    padding: 0;
+		
+		
+}
+div.company section ul li {
+	list-style-type:none;
+	color: #888888;
+	font-size:12px;
+	
+}
+
+/* Quote */
+#items {
+	width:700px;
+	}
+#items input{
+	width:100%;
+}
+
+
+
+
