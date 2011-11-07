@@ -1,0 +1,23 @@
+<%= nested_form_for @quote do |quote_form| %>
+	<%= quote_form.label :name %>
+	<%= quote_form.text_field :name %> <br />
+	
+	<%= quote_form.fields_for :quote_lines do |quote_line_fields| %>
+		<table>
+			<tr>
+		<%= quote_line_fields.fields_for :item do |item_fields| %>
+			<!--><td><%= item_fields.label :description %></td>-->
+			<td><%= item_fields.text_field :description %></td>
+		<% end %>
+			<!--><td><%= quote_line_fields.label :quantity %></td>-->
+			<td><%= quote_line_fields.text_field :quantity %></td>
+		
+			<td><%= quote_line_fields.link_to_remove "Remove Quote Line" %></td>
+			</tr>
+				
+		</table>
+	<% end %>
+	
+	<%= quote_form.link_to_add "Add Quote Line", :quote_lines %>
+	<%= quote_form.submit%>
+<% end %>

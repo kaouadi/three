@@ -1,0 +1,18 @@
+<ul>
+	<li>Quote ID: <%= @quote.id %></li>
+	<li>Quote Name: <%= @quote.name %></li>
+
+	<ul>
+		<% @quote.quote_lines.each do |quote_line| %>
+    		<li>Quote Line ID: <%= quote_line.id %></li>
+			<li>Quote Line Quantity: <%= quote_line.quantity %></li>
+			<% item = quote_line.item %>
+			<ul>
+				<li>Item ID: <%= item.id %></li>
+				<li>Item Description: <%= item.description %></li>
+			</ul>
+		<% end %>
+	</ul>
+	
+	<%= link_to "Edit Quote", edit_quote_path(@quote) %>
+</ul>
