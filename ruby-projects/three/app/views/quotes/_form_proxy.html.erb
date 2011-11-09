@@ -1,0 +1,72 @@
+<%= form_for @quote do |quote_form| %>
+
+	<%= quote_form.text_field :name %> <br />
+	
+	
+	
+		<table>
+		
+		<%= quote_form.fields_for :quote_lines, :quote_line do |quote_line_form| %>
+		<tr class="fields">
+			
+				
+				<td>
+					<%= quote_line_form.hidden_field :_destroy %>
+					<%= link_to  "remove" ,"javascript:void(0)", :class =>"remove_fields"  %>
+				</td>		
+				
+				<td><%= quote_line_form.text_field :quantity %></td>
+			
+				<%= quote_line_form.fields_for :item do|item_form| %>
+				
+						<td><%= item_form.text_field :description %></td>
+			
+				<%end%>
+					
+			
+		
+						
+			<% end%>
+			
+		</tr>
+		 
+			
+			
+		</table>
+		
+		<div class="quote_lines_fields_blueprint" style="display :none">
+			
+				
+				
+				<%  
+					quote_line_fields_blueprint = @quote.quote_lines.build(quantity: 1)
+		      		quote_line_fields_blueprint.item = Item.new(description: "Item add ")
+				%>	
+					<table>
+						<%= quote_form.fields_for :quote_lines, quote_line_fields_blueprint, :child_index => "new_#{:quote_lines}" do 		
+								|quote_line_form|
+						 %>
+															
+						<tr class="fields">
+							
+							<td>
+									<%= quote_line_form.hidden_field :_destroy %>
+									<%= link_to_function "remove", "remove_fields(this)" %>
+							</td>
+							<td><%= quote_line_form.text_field :quantity %></td>
+							
+								<%= quote_line_form.fields_for :item ,:child_index => "new_#{:item}" do|item_form| %>
+
+										<td><%= item_form.text_field :description %></td>
+
+								<%end%>
+						
+						<%end%>
+						</tr>
+					</table>
+			</div>
+
+
+
+
+	<% end %>
