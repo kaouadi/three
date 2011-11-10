@@ -16,13 +16,15 @@ jQuery(function($) {
 	
 	 $('#items_quote tfoot a').live('click', function() {
 		
+		
+		var context = $('#items_quote tbody>tr').length;
 		var content = $('#quote_lines_fields_blueprint table tbody').html(); // Fields template
-	
 		// Make a unique ID for the new child
 	    var regexp  = new RegExp('new_' + 'quote_lines', 'g');
-	    var new_id  = new Date().getTime();
-	    content     = content.replace(regexp, "new_" + new_id);
-		$('#items_quote tfoot').before(content);
+	    //content     = content.replace(regexp, "new_" + new_id);
+	 	content     = content.replace(regexp, context);
+		$('#items_quote tbody>tr:last').after(content);
+	
 	
 		
 	});	
