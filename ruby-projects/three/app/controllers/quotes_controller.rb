@@ -22,4 +22,8 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     @quote.update_attributes!(params[:quote])
   end
+  
+  def show
+    @quote = Quote.find(params[:id])
+  end
 end

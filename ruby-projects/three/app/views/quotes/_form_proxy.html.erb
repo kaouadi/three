@@ -38,17 +38,20 @@
 	</tfoot>
 </table>
 
+<%= quote_form.submit%>
+
+<% end %>
 
 <div id="quote_lines_fields_blueprint" style="display :none">
 
-
-
 	<%  
-	quote_line_fields_blueprint = @quote.quote_lines.build(quantity: 1)
-	quote_line_fields_blueprint.item = Item.new(description: "Item add ")
+	quote_blueprint = Quote.new
+	quote_line_fields_blueprint = quote_blueprint.quote_lines.build
+	quote_line_fields_blueprint.item = Item.new
 	%>	
 	<table>
-		<%= quote_form.fields_for :quote_lines, quote_line_fields_blueprint, :child_index => "new_#{:quote_lines}" do 		
+		<%= fields_for quote_blueprint do |f|%>
+		<%= f.fields_for :quote_lines, quote_line_fields_blueprint, :child_index => "new_#{:quote_lines}" do 		
 			|quote_line_form|
 			%>
 
@@ -67,6 +70,9 @@
 				<%end%>
 
 				<%end%>
+				
+				<%end%>
+			
 			</tr>
 		</table>
 	</div>
@@ -74,4 +80,3 @@
 
 
 
-	<% end %>
