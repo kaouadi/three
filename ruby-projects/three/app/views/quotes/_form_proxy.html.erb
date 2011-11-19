@@ -10,23 +10,24 @@
 	<tr class="fields">
 
 
-		<td>
-			<%= quote_line_form.hidden_field :_destroy %>
-			<%= link_to  "remove" ,"javascript:void(0)", :class =>"remove_fields"  %>
-		</td>		
+				<td>
+					<%= quote_line_form.hidden_field :_destroy %>
+					<%= link_to  "remove" ,"javascript:void(0)", :class =>"remove_fields"  %>
+				</td>
+				
 
-		<td><%= quote_line_form.text_field :quantity %></td>
+				<td><%= quote_line_form.text_field :quantity %></td>
 
-		<%= quote_line_form.fields_for :item do|item_form| %>
+			<%= quote_line_form.fields_for :item do|item_form| %>
 
-		<td><%= item_form.text_field :description %></td>
+				<td><%= item_form.text_field :description %></td>
 
-		<%end%>
-
-
+			<%end%>
 
 
-		<% end%>
+
+
+	<% end%>
 
 	</tr>
 	<tfoot>
