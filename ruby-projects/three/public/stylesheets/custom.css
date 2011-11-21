@@ -250,6 +250,23 @@ div.company section ul li {
 	width:100%;
 }
 
+.proposed a.proposed{
+	background-color: #333333;
+	color: #FFFFFF;
+}
+
+.saved a.saved{
+	background-color: #333333;
+	color: #FFFFFF;
+}
+
+.accepted a.accepted{
+	background-color: #333333;
+	color: #FFFFFF;
+}
+
+
+
 
 
 

@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   
   def new
-    @status = "proposed"
+    @status = "created"
   end
 
   def create
-    @status = "created"
+    @status = params[:status]
     respond_to do |format|
       format.html{ redirect_to new_page_path}
       format.js

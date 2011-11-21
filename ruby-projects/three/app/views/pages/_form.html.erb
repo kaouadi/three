@@ -1,13 +1,9 @@
-<%= form_tag(pages_path, :method =>"post",:id => 'page_status_form', :remote => true) do %>
+<%= form_tag(pages_path, :method =>"post",:id => 'page_status_form', :remote => true, :class => @status) do %>
 
 <%= hidden_field_tag :status, @status %>
 
-<%= link_to "saved", "javascript:void(0)" , 'data-status' => 'save', :class => 'selected' if @status =="save" %>
-	
-	
-
-
-<%= link_to "proposed","javascript:void(0)", 'data-status' => 'proposed',:class => 'selected' if @status =="proposed" %> 
-<%= link_to "accepted", "javascript:void(0)", 'data-status' => 'accepted',:class => 'selected'%>
+<%= link_to "saved", "javascript:void(0)" , 'data-status' => 'save', :class => "saved"%>
+<%= link_to "proposed","javascript:void(0)", 'data-status' => 'proposed', :class => "proposed" %> 
+<%= link_to "accepted", "javascript:void(0)", 'data-status' => 'accepted', :class => "accepted"%>
 
 <% end %>
