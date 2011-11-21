@@ -24,8 +24,18 @@ jQuery(function($) {
 	    //content     = content.replace(regexp, "new_" + new_id);
 	 	content     = content.replace(regexp, context);
 		$('#items_quote tbody>tr:last').after(content);
-	
-	
 		
 	});	
+	
+	$('#page_status_form a').live('click', function() {
+		var hidden_field = $(this).prev('input[type=hidden]');
+		if(hidden_field) {
+			hidden_field.value = $(this).data("status");
+		}
+		var form = $(this).parent('form').submit()
+		var cous= "aa"
+	
+	});
+	
+	
 });

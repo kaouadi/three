@@ -1,12 +1,14 @@
 <h1>Pages#new</h1>
 <p>Find me in app/views/pages/new.html.erb</p>
 
-<%= form_for :status, :url => pages_path, :html => {:id => 'page_status_form'}, :remote => true do |f| %>
-
-<%= f.submit%>	
-	
-<% end %>
-
+<div id="page_form">
+<%= render 'form' %>
+</div>
 <div id="flash">
  hello
 </div>
+
+
+
+
+
