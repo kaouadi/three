@@ -32,8 +32,10 @@ jQuery(function($) {
 		if(hidden_field) {
 			hidden_field.value = $(this).data("status");
 		}
-		var form = $(this).parent('form').submit()
-		var cous= "aa"
+	 	$(this).parent('form').submit()   
+		 
+	
+		
 	
 	});
 	
