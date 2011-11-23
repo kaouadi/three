@@ -3,46 +3,34 @@
 <%= quote_form.text_field :name %> <br />
 
 
-
-<table id="items_quote">
+<div id="quote">
+	<table id="items_quote">
 
 	<%= quote_form.fields_for :quote_lines, :quote_line do |quote_line_form| %>
-	<tr class="fields">
-
-
+		<tr class="fields">
 				<td>
 					<%= quote_line_form.hidden_field :_destroy %>
 					<%= link_to  "remove" ,"javascript:void(0)", :class =>"remove_fields"  %>
 				</td>
-				
-
-				<td><%= quote_line_form.text_field :quantity %></td>
-
-			<%= quote_line_form.fields_for :item do|item_form| %>
-
-				<td><%= item_form.text_field :description %></td>
-
-			<%end%>
-
-
-
-
+				<%= quote_line_form.fields_for :item do|item_form| %>
+					<td><%= quote_line_form.text_field :quantity %></td>
+					<td><%= item_form.text_field :description %></td>
+				<%end%>
+		</tr>	
 	<% end%>
-
-	</tr>
-	<tfoot>
-		<tr>
-			<td colspan="3">
+		<tfoot>
+			<tr>
+				<td colspan="3">
 				<%= link_to  "Add" ,"javascript:void(0)", :class =>"add_fields"  %>	
-			</td>
-		</tr>
-	</tfoot>
-</table>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
 
 <%= quote_form.submit%>
 
 <% end %>
-
+</div>
 <div id="quote_lines_fields_blueprint" style="display :none">
 
 	<%  
