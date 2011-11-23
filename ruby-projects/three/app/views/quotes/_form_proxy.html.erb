@@ -3,7 +3,7 @@
 <%= quote_form.text_field :name %> <br />
 
 
-<div id="quote">
+
 	<table id="items_quote">
 
 	<%= quote_form.fields_for :quote_lines, :quote_line do |quote_line_form| %>
@@ -27,10 +27,10 @@
 		</tfoot>
 	</table>
 
-<%= quote_form.submit%>
+<%= quote_form.submit %>
 
 <% end %>
-</div>
+
 <div id="quote_lines_fields_blueprint" style="display :none">
 
 	<%  
