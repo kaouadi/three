@@ -35,3 +35,14 @@ a {
 	background-color: #333333;
 	color: #FFFFFF;
 }
+#items_quote {
+	width:500px;
+}
+#items_quote tr input[type='text'] {
+	width:100%;
+}
+#items_quote td.quantity{
+	
+}
+
+

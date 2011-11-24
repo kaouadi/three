@@ -2,7 +2,7 @@
 	width: 950px;
 }
 body {
-	background: #cff;
+	/*background: #cff;*/
 }
 
 header {
@@ -185,13 +185,13 @@ table.index td {
     padding: 12px 0;
     vertical-align: top;
 }
-/* Desactiver alernative row    */
+/* Desactiver alernative row   
 
 table.no-zebra tbody tr:nth-child(even) td,
 table.no-zebra tbody tr.even td {
   background: transparent;
 }
-
+ */
 
 /* Company = > Requests */
 
