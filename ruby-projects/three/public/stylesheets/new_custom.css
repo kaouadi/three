@@ -4,6 +4,12 @@ body {
 
 }
 
+table.no-zebra tbody tr:nth-child(even) td,
+table.no-zebra tbody tr.even td {
+  background: transparent;
+}
+
+
 a {
 	/* Propriete d'affichage  */
 	

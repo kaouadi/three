@@ -1,5 +1,5 @@
 class QuoteLine < ActiveRecord::Base
-  attr_accessible :quantity, :item_attributes
+  attr_accessible :quantity, :item_attributes, :taxe, :discount_rate, :amount
   
   belongs_to :quote
   belongs_to :item

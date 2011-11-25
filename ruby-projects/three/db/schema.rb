@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20111104154507) do
   create_table "items", :force => true do |t|
     t.string   "ref"
     t.string   "description"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -23,6 +24,9 @@ ActiveRecord::Schema.define(:version => 20111104154507) do
     t.integer  "quote_id"
     t.integer  "item_id"
     t.integer  "quantity"
+    t.decimal  "discount_rate"
+    t.decimal  "taxe"
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

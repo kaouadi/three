@@ -3,9 +3,14 @@
 <%= quote_form.text_field :name %> <br />
 
 
-	<table id="items_quote">
-
+	<table id="items_quote" border="0" cellpadding="0" cellspacing="0" class="no-zebra">
+		<thead>
+			<th>[-]</th>
+			<th>Description</th>
+			<th>Quantity</th>
+		</thead>
 	<%= quote_form.fields_for :quote_lines, :quote_line do |quote_line_form| %>
+	
 		<tr class="fields">
 				<td class="remove">
 					<%= quote_line_form.hidden_field :_destroy %>
@@ -14,9 +19,9 @@
 				<%= quote_line_form.fields_for :item do|item_form| %>
 					<td class="quantity"><%= quote_line_form.text_field :quantity %></td>
 					<td class="description"><%= item_form.text_field :description %></td>
-				<%end%>
+				<% end %>
 		</tr>	
-	<% end%>
+	<% end %>
 		<tfoot>
 			<tr>
 				<td colspan="3">

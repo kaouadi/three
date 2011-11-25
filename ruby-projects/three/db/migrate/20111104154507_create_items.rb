@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.string :ref
       t.string :description
+      t.decimal :price
       t.timestamps
     end
   end

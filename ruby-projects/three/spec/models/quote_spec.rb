@@ -5,9 +5,9 @@ describe Quote do
   before(:each) do
     @attr ={:name => "toto"}
     @params = {:quote => {:name => "toto", :quote_lines_attributes => [
-                    { :quantity =>1, :item_attributes =>{:ref => "3000"}},
-                    { :quantity =>1, :item_attributes =>{:ref => "1000"}},
-                    { :quantity =>1, :item_attributes =>{:ref => "5000"}}
+                    { :quantity =>1, :taxe =>0.196, :discount_rate =>0.05, :item_attributes =>{:description => "ref 3000",:ref => "3000",:price => 100}},
+                    { :quantity =>1, :taxe =>0.196, :discount_rate =>0.05, :item_attributes =>{:description => "ref 1000",:ref => "1000",:price => 200}},
+                    { :quantity =>1, :taxe =>0.196, :discount_rate =>0.05, :item_attributes =>{:description => "ref 5000",:ref => "5000",:price => 300}}
                           ] 
                             }
                              }
