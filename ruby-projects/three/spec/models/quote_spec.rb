@@ -5,9 +5,9 @@ describe Quote do
   before(:each) do
     @attr ={:name => "toto"}
     @params = {:quote => {:name => "toto", :quote_lines_attributes => [
-                    { :quantity =>1, :taxe =>0.196, :discount_rate =>0.05, :item_attributes =>{:description => "ref 3000",:ref => "3000",:price => 100}},
-                    { :quantity =>1, :taxe =>0.196, :discount_rate =>0.05, :item_attributes =>{:description => "ref 1000",:ref => "1000",:price => 200}},
-                    { :quantity =>1, :taxe =>0.196, :discount_rate =>0.05, :item_attributes =>{:description => "ref 5000",:ref => "5000",:price => 300}}
+                    { :quantity =>1, :taxe =>0.196, :discount_rate => 0.05, :item_attributes =>{:description => "ref 3000",:ref => "3000",:price => 100}},
+                    { :quantity =>1, :taxe =>0.196, :discount_rate => 0.05, :item_attributes =>{:description => "ref 1000",:ref => "1000",:price => 200}},
+                    { :quantity =>1, :taxe =>0.196, :discount_rate => 0.05, :item_attributes =>{:description => "ref 5000",:ref => "5000",:price => 300}}
                           ] 
                             }
                              }
@@ -29,7 +29,7 @@ describe Quote do
     end
   end
     
-    it "update quote" do 
+  it "update quote" do 
         quote = Quote.create!(@params[:quote])
         param_update = {:quote => {:name => "toto", :quote_lines_attributes => [
                         { :id =>1, :quantity =>5, :item_attributes =>{:ref => "Update XXX"}}
@@ -44,7 +44,7 @@ describe Quote do
       
     end
     
-      it "delete quote line" do 
+  it "delete quote line" do 
           quote = Quote.create!(@params[:quote])
           param_delete = {:quote => { :quote_lines_attributes => [
                           { :id =>1, :_destroy => '1' }
@@ -63,5 +63,62 @@ describe Quote do
 
       end
     
+    
+    describe "Quote calcul" do
+      
+      before(:each) do
+        @quote = Quote.create!(@params[:quote])
+      end
+      
+      it "should valid subtotal" do
+        @quote.subtotal.should == 600
+      end
+      
+      it "should valid total" do
+        @quote.total.should == 681.72
+      end
+      
+      it "should valid rate" do
+        @quote.rate.should == 30
+      end
+        
+      it "should valid taxe" do
+        @quote.taxe.should == 111.72
+        
+      end
+    end
+    describe "initialize quote_line" do
+      
+      before(:each) do
+        @attr ={:name => "toto"}
+        @params = {:quote => {:name => "toto", :quote_lines_attributes => [
+                        { :quantity =>0, :taxe =>0.196, :discount_rate => 0.05, :item_attributes =>{:description => "ref 3000",:ref => "3000",:price => 100}},
+                        { :taxe =>0.196, :discount_rate => 0.05, :item_attributes =>{:description => "ref 1000",:ref => "1000",:price => 200}},
+                        { :taxe =>0.196, :discount_rate => 0.05, :item_attributes =>{:description => "ref 5000",:ref => "5000",:price => 300}}
+                              ] 
+                                }
+                                 }
+        @quote = Quote.create!(@params[:quote])                       
+        end
+      
+         it "should valid subtotal" do
+            @quote.subtotal.should == 600
+          end
+
+          it "should valid total" do
+            @quote.total.should == 681.72
+          end
+
+          it "should valid rate" do
+            @quote.rate.should == 30
+          end
+
+          it "should valid taxe" do
+            @quote.taxe.should == 111.72
+
+          end
+      
+      
+    end
   end
 
