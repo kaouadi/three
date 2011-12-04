@@ -32,7 +32,7 @@ a {
 	color: #FFFFFF;
 }
 
-.status.saved.saved a.saved{
+.status.saved a.saved{
 	background-color: #333333;
 	color: #FFFFFF;
 }

@@ -1,2 +1,3 @@
 $("#quote_form").html("<%= escape_javascript(render('quotes/ajax_form'))%>")
 $("#flash").html('<%= "Mis a jour"%>')
+$('#page_status_form').addClass('status <%= @status %>')
